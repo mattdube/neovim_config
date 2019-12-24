@@ -30,16 +30,27 @@ call plug#begin()
 " Color themes
 Plug 'endel/vim-github-colorscheme'
 Plug 'lifepillar/vim-solarized8'
+Plug 'romainl/flattened'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'haishanh/night-owl.vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ayu-theme/ayu-vim' " or other package manager
+Plug 'arcticicestudio/nord-vim'
+Plug 'rakr/vim-one'
+Plug 'morhetz/gruvbox'
+Plug 'mhartington/oceanic-next'
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } "{{{		" File tree
   nnoremap <silent> <F4> :NERDTreeToggle<CR>
   nnoremap <silent> <F5> :NERDTreeFind<CR>
   nnoremap <F9> :NERDTreeToggle D:\Users\Matt\GitHub
 "}}}
+
 Plug 'airblade/vim-gitgutter'                                       " Track git changes
-Plug 'jreybert/vimagit'
+" Plug 'jreybert/vimagit'
+Plug 'rhysd/git-messenger.vim'
+" Plug 'itchyny/vim-gitbranch'
+
 " Push to remote
 nnoremap <leader>gP :! git push<CR>  " git Push
 
@@ -116,12 +127,21 @@ Plug 'jupyter-vim/jupyter-vim'
 " Load jupytext
 Plug 'goerz/jupytext.vim'
 
+Plug 'Yggdroot/indentLine'
+
 call plug#end()
 "
 " << COLORSCHEMES >>
 set background=dark
 " colorscheme PaperColor
-colorscheme night-owl
+colorscheme one
+
+" settings for ayu-vim theme
+" set termguicolors     " enable true colors support
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage" " for mirage version of theme
+" let ayucolor="dark"   " for dark version of theme
+" colorscheme ayu
 
 " let g:airline_theme='papercolor'
 "let g:lightline = {
@@ -129,7 +149,7 @@ colorscheme night-owl
 "      \ }
 "  
 let g:lightline = {
-  \   'colorscheme': 'nightowl',
+  \   'colorscheme': 'one',
   \   'active': {
   \     'left':[ [ 'mode', 'paste' ],
   \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
@@ -242,3 +262,4 @@ nnoremap <S-Left> :0tabnew<CR>
 nnoremap <S-Right> :$tabnew<CR>
 
 set number
+let R_in_buffer = 0
